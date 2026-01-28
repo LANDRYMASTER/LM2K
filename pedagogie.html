@@ -32,67 +32,75 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-       :root {
-            --lycee-green: #0b3d2e;
-            --lycee-yellow: #fdb913;
-        }
-        body { font-family: 'Segoe UI', sans-serif; }
-        
-        /* Couleurs */
-        .bg-lycee-green { background-color: var(--lycee-green) !important; color: white; }
-        .bg-lycee-yellow { background-color: var(--lycee-yellow) !important; color: #000; }
-        .text-lycee-green { color: var(--lycee-green) !important; }
-        .text-lycee-yellow { color: var(--lycee-yellow) !important; }
+        :root {
+    --lycee-green: #0b3d2e; /* Le vert foncé du header/footer */
+    --lycee-yellow: #fdb913; /* Le jaune de la navbar */
+    --text-dark: #1a1a1a;
+    --text-grey: #666;
+}
 
-        /* Top Bar */
-        .top-bar { font-size: 0.9rem; padding: 10px 0; }
-        
-        /* Navbar */
-        .navbar-lycee .nav-link { color: #000 !important; font-weight: 500; padding: 10px 15px !important; }
-        .navbar-lycee .nav-link.active { background-color: rgba(255,255,255,0.2); border-radius: 5px; }
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 
-        /* Formulaire */
-        .form-control:focus {
-            border-color: var(--lycee-green);
-            box-shadow: 0 0 0 0.25rem rgba(11, 61, 46, 0.25);
-        }
-        .btn-submit {
-            background-color: var(--lycee-green);
-            color: white;
-            padding: 12px 30px;
-            font-weight: bold;
-            border: none;
-            transition: all 0.3s;
-        }
-        .btn-submit:hover {
-            background-color: var(--lycee-yellow);
-            color: var(--lycee-green);
-        }
+/* Couleurs personnalisées */
+.bg-lycee-green { background-color: var(--lycee-green) !important; color: white; }
+.bg-lycee-yellow { background-color: var(--lycee-yellow) !important; color: #000; }
+.text-lycee-green { color: var(--lycee-green) !important; }
+.text-lycee-yellow { color: var(--lycee-yellow) !important; }
 
-        /* Info Box */
-        .contact-info-box {
-            background: white;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            height: 100%;
-        }
-        .icon-box {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(253, 185, 19, 0.2); /* Jaune transparent */
-            color: var(--lycee-green);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-        
-        /* Footer */
-        footer { background-color: var(--lycee-green); color: white; padding-top: 60px; }
-        footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+/* Top Bar (Contact) */
+.top-bar { font-size: 0.9rem; padding: 10px 0; }
+.top-bar i { margin-right: 5px; color: var(--lycee-yellow); }
+
+/* Navbar */
+.navbar-lycee .nav-link { 
+    color: #000 !important; 
+    font-weight: 500; 
+    padding: 10px 15px !important; 
+    text-transform: capitalize;
+}
+.navbar-lycee .nav-link:hover, .navbar-lycee .nav-link.active { 
+    background-color: rgba(255,255,255,0.2); 
+    border-radius: 5px;
+}
+
+/* Titres */
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: var(--lycee-yellow);
+    bottom: 0;
+    left: 0;
+}
+.section-subtitle {
+    color: var(--lycee-yellow);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Cartes Statistiques (Le bloc 4 couleurs) */
+.stat-box { padding: 40px 20px; text-align: center; height: 100%; transition: transform 0.3s; }
+.stat-box:hover { transform: translateY(-5px); }
+.stat-box h2 { font-weight: 800; font-size: 3rem; margin-bottom: 10px; }
+.stat-box.green { background-color: var(--lycee-green); color: white; }
+.stat-box.yellow { background-color: var(--lycee-yellow); color: var(--lycee-green); }
+
+/* Footer */
+footer { background-color: var(--lycee-green); color: white; padding-top: 60px; }
+footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+footer a:hover { color: var(--lycee-yellow); }
     </style>
 </head>
 
@@ -168,7 +176,7 @@
                     <div class="navbar-nav me-auto">
                         <a href="index.html" class="nav-item nav-link">Accueil</a>
                         <a href="presentation.html" class="nav-item nav-link">Présentation</a>
-                        <a href="pedagogie.html" class="nav-item nav-link">Vie Scolaire / Pédagogie</a>
+                        <a href="" class="nav-item nav-link">Vie Scolaire / Pédagogie</a>
                         <a href="#" class="nav-item nav-link">Actualités</a>
                         <div class="nav-item dropdown">
                             <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -178,7 +186,7 @@
                                 <a href="#" class="dropdown-item">Planing des devoirs</a>
                             </div>
                         </div>
-                        <a href="" class="nav-item nav-link">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="d-none d-lg-flex ms-auto">
                         <a class="btn btn-square btn-dark ms-2" href="#!"><i class="fab fa-twitter"></i></a>
@@ -191,105 +199,172 @@
     </div>
     <!-- Navbar End -->
 
-    <header class="py-5 bg-light text-center" style="background: linear-gradient(rgba(11, 61, 46, 0.8), rgba(11, 61, 46, 0.8)), url('https://images.unsplash.com/photo-1427504746696-ea5abd7dfe4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center;">
-        <div class="container py-4">
-            <h1 class="display-4 fw-bold text-white">Contactez-nous</h1>
-            <p class="lead text-warning">Une question ? Besoin d'une information ?</p>
+    <header class="py-5 bg-light" style="background: linear-gradient(rgba(11, 61, 46, 0.9), rgba(11, 61, 46, 0.8)), url('img/508126332_1266102128211142_8685945848999601732_n.jpg'); background-size: cover; color: white;">
+        <div class="container py-5 text-center">
+            <h1 class="display-4 fw-bold text-warning">Pédagogie et Vie Scolaire</h1>
+            <p class="lead">Un encadrement rigoureux pour forger les leaders de demain.</p>
         </div>
     </header>
 
     <section class="py-5">
-        <div class="container py-4">
-            <div class="row g-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card border-0 shadow-sm h-100 p-3 bg-light">
+                        <div class="card-body">
+                            <i class="fas fa-book-reader fa-2x text-lycee-green mb-3"></i>
+                            <h4 class="card-title fw-bold">Enseignement Général</h4>
+                            <p class="card-text text-muted small">
+                                Un cycle complet de la 6ème à la Terminale avec des parcours scientifiques (C, D) et littéraires (A1, A2). Excellence académique garantie.
+                            </p>
+                            <a href="#" class="text-warning fw-bold text-decoration-none small">DÉCOUVRIR <i class="fas fa-arrow-right"></i></a>
+                            <hr class="w-25 border-warning border-3 opacity-100 mt-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card border-0 shadow-sm h-100 p-3 bg-light">
+                        <div class="card-body">
+                            <i class="fas fa-user-clock fa-2x text-lycee-green mb-3"></i>
+                            <h4 class="card-title fw-bold">Vie Scolaire</h4>
+                            <p class="card-text text-muted small">
+                                Un encadrement disciplinaire rigoureux (Éducateurs, Surveillants) pour favoriser l'épanouissement et le civisme de nos élèves.
+                            </p>
+                            <a href="#" class="text-warning fw-bold text-decoration-none small">DÉCOUVRIR <i class="fas fa-arrow-right"></i></a>
+                            <hr class="w-25 border-warning border-3 opacity-100 mt-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card border-0 shadow-sm h-100 p-3 bg-light">
+                        <div class="card-body">
+                            <i class="fas fa-hands-helping fa-2x text-lycee-green mb-3"></i>
+                            <h4 class="card-title fw-bold">Activités Extra-scolaire</h4>
+                            <p class="card-text text-muted small">
+                                Clubs de lecture, d'environnement, d'anglais et de sport pour stimuler les talents extrascolaires et la créativité.
+                            </p>
+                            <a href="#" class="text-warning fw-bold text-decoration-none small">DÉCOUVRIR <i class="fas fa-arrow-right"></i></a>
+                            <hr class="w-25 border-warning border-3 opacity-100 mt-2">
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="col-lg-5">
-                    <div class="contact-info-box">
-                        <h3 class="fw-bold text-lycee-green mb-4">Nos Coordonnées</h3>
-                        <p class="text-muted mb-4">L'administration du lycée est à votre écoute pour toute demande concernant les inscriptions, la vie scolaire ou les partenariats.</p>
-                        
-                        <div class="d-flex align-items-start mb-4">
-                            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <h6 class="fw-bold mb-1">Adresse</h6>
-                                <p class="mb-0 text-muted">Koumassi, Terminus 05<br>Abidjan, Côte d'Ivoire</p>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card border-0 shadow-sm h-100 p-3 bg-light">
+                        <div class="card-body">
+                            <i class="fas fa-book fa-2x text-lycee-green mb-3"></i>
+                            <h4 class="card-title fw-bold">Bibliothèque & CDI</h4>
+                            <p class="card-text text-muted small">
+                                Un accès à des ressources pédagogiques variées, manuels numériques et espace de lecture pour accompagner les recherches.
+                            </p>
+                            <a href="#" class="text-warning fw-bold text-decoration-none small">DÉCOUVRIR <i class="fas fa-arrow-right"></i></a>
+                            <hr class="w-25 border-warning border-3 opacity-100 mt-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card border-0 shadow-sm h-100 p-3 bg-light">
+                        <div class="card-body">
+                            <i class="fas fa-compass fa-2x text-lycee-green mb-3"></i>
+                            <h4 class="card-title fw-bold">Orientation</h4>
+                            <p class="card-text text-muted small">
+                                Un service de Psychologie et d'Orientation pour guider les élèves dans leurs choix de filières et carrières futures.
+                            </p>
+                            <a href="#" class="text-warning fw-bold text-decoration-none small">DÉCOUVRIR <i class="fas fa-arrow-right"></i></a>
+                            <hr class="w-25 border-warning border-3 opacity-100 mt-2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card border-0 shadow-sm h-100 p-3 bg-light">
+                        <div class="card-body">
+                            <i class="fas fa-laptop-code fa-2x text-lycee-green mb-3"></i>
+                            <h4 class="card-title fw-bold">Salles Informatiques</h4>
+                            <p class="card-text text-muted small">
+                                Initiation à l'informatique et au code dans nos salles multimédias équipées, pour préparer aux métiers du numérique.
+                            </p>
+                            <a href="#" class="text-warning fw-bold text-decoration-none small">DÉCOUVRIR <i class="fas fa-arrow-right"></i></a>
+                            <hr class="w-25 border-warning border-3 opacity-100 mt-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-subtitle">AGENDA</span>
+                <h2 class="fw-bold text-lycee-green">Événements à Venir</h2>
+            </div>
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="img/rentr-e-scolaire-2025---banni-re-229211.jpg" class="card-img-top" alt="Excellence" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Journée d'Excellence</h5>
+                            <p class="text-muted small">Cérémonie de récompense des meilleurs élèves du premier trimestre.</p>
+                            <div class="mt-3 p-3 bg-light rounded text-small">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-clock text-warning me-2"></i> 08:00 - 12:00
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-calendar-alt text-warning me-2"></i> 20 Décembre
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-map-pin text-warning me-2"></i> Préau Principal
+                                </div>
                             </div>
                         </div>
-
-                        <div class="d-flex align-items-start mb-4">
-                            <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
-                            <div>
-                                <h6 class="fw-bold mb-1">Téléphone</h6>
-                                <p class="mb-0 text-muted">(+225) 27 21 56 14 65<br>(+225) 07 07 00 00 00</p>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-start mb-4">
-                            <div class="icon-box"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <h6 class="fw-bold mb-1">Email</h6>
-                                <p class="mb-0 text-muted">secretariat@lycee-koumassi2.ci<br>info@lycee-koumassi2.ci</p>
-                            </div>
-                        </div>
-
-                        <hr class="my-4">
-
-                        <h6 class="fw-bold text-lycee-green mb-3">Horaires Administration</h6>
-                        <ul class="list-unstyled text-muted small">
-                            <li class="d-flex justify-content-between mb-2"><span>Lundi - Vendredi :</span> <span>07h30 - 16h30</span></li>
-                            <li class="d-flex justify-content-between"><span>Samedi :</span> <span>08h00 - 12h00</span></li>
-                        </ul>
                     </div>
                 </div>
 
-                <div class="col-lg-7">
-                    <div class="bg-light p-4 p-md-5 rounded shadow-sm">
-                        <h3 class="fw-bold text-lycee-green mb-2">Envoyez-nous un message</h3>
-                        <p class="text-muted mb-4">Remplissez le formulaire ci-dessous, nous vous répondrons sous 24h.</p>
-                        
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label for="nom" class="form-label fw-bold small">Nom complet</label>
-                                    <input type="text" class="form-control py-2" id="nom" placeholder="Votre nom">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="img/carrefour_des_metiers-1536x807.jpg" class="card-img-top" alt="Orientation" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Carrefour des Métiers</h5>
+                            <p class="text-muted small">Rencontre avec des professionnels pour les élèves de Terminale.</p>
+                            <div class="mt-3 p-3 bg-light rounded text-small">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-clock text-warning me-2"></i> 10:00 - 16:00
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="email" class="form-label fw-bold small">Adresse Email</label>
-                                    <input type="email" class="form-control py-2" id="email" placeholder="nom@exemple.com">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-calendar-alt text-warning me-2"></i> 15 Janvier
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="phone" class="form-label fw-bold small">Téléphone</label>
-                                    <input type="tel" class="form-control py-2" id="phone" placeholder="(+225) ...">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="sujet" class="form-label fw-bold small">Sujet</label>
-                                    <select id="sujet" class="form-select py-2">
-                                        <option selected>Renseignement général</option>
-                                        <option>Inscription / Réinscription</option>
-                                        <option>Vie Scolaire (Absence, Discipline)</option>
-                                        <option>Partenariat</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label for="message" class="form-label fw-bold small">Votre message</label>
-                                    <textarea class="form-control" id="message" rows="5" placeholder="Écrivez votre message ici..."></textarea>
-                                </div>
-                                <div class="col-12 mt-4">
-                                    <button type="submit" class="btn btn-submit w-100 shadow-sm">
-                                        ENVOYER LE MESSAGE <i class="fas fa-paper-plane ms-2"></i>
-                                    </button>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-map-pin text-warning me-2"></i> Salle Polyvalente
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="img/football-match-groupe-scolaire-le-Salem.jpg" class="card-img-top" alt="Sport" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="fw-bold">Finales Inter-classes</h5>
+                            <p class="text-muted small">Tournoi de football et de handball : Professeurs vs Élèves.</p>
+                            <div class="mt-3 p-3 bg-light rounded text-small">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-clock text-warning me-2"></i> 14:00 - 18:00
+                                </div>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="fas fa-calendar-alt text-warning me-2"></i> 05 Février
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-map-pin text-warning me-2"></i> Terrain de Sport
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
         </div>
-    </section>
-
-    <section class="container-fluid p-0">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15891.879789317585!2d-3.966666!3d5.266667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1f173b06e9c9b%3A0x8c7c9c9c9c9c9c9c!2sKoumassi%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1620000000000!5m2!1sfr!2sci" 
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </section>
 
     <!-- Newsletter Start -->
